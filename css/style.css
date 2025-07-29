@@ -72,6 +72,7 @@ body{
             cursor: pointer;        
             display: inline-block;
             max-width: 40px;
+            padding: 7px;
             vertical-align: top;
         }
             .audio-controls button img{
@@ -84,6 +85,7 @@ body{
             font-size: 0.8rem;
             font-weight: 400;
             margin: 0;
+            padding-top: 10px;
             text-transform: uppercase;
             vertical-align: middle;
         }
@@ -146,6 +148,16 @@ body{
 
 @media only screen and (max-width: 640px) {    
 
+    .header h1{
+        font-size: 2rem;
+        width: 98%;
+    }
+    .audio-controls p{
+        
+    }
+    .main h2{
+        padding: 0 20px;
+    }
 
     .header h5.seccion{
         margin-top: 60px;
