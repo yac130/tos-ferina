@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/style.css?v3">
+    <link rel="stylesheet" href="https://yac130.github.io/tos-ferina/css/style.css?v3">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4/dist/jquery.bxslider.css" />
 
 
@@ -160,37 +160,37 @@
 
     <!-- audio video -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.querySelector('.header video');
-            const playBtn = document.querySelector('.audio-controls .play-button');
-            const pauseBtn = document.querySelector('.audio-controls .pause-button');
-            const header = document.querySelector('.header');
+        $(document).ready(function() {
+            const video = $('.header video');
+            const playBtn = $('.audio-controls .play-button');
+            const pauseBtn = $('.audio-controls .pause-button');
+            const header = $('.header');
 
             function setAudio(active) {
-                video.muted = !active;
-                playBtn.style.display = active ? 'none' : 'inline-block';
-                pauseBtn.style.display = active ? 'inline-block' : 'none';
+                video.prop('muted', !active);
+                playBtn.css('display', active ? 'none' : 'inline-block');
+                pauseBtn.css('display', active ? 'inline-block' : 'none');
             }
 
-            playBtn.addEventListener('click', function() {
+            playBtn.on('click', function() {
                 setAudio(true);
             });
 
-            pauseBtn.addEventListener('click', function() {
+            pauseBtn.on('click', function() {
                 setAudio(false);
             });
 
             // Detect if header is out of viewport and mute audio if so
             function isHeaderInViewport() {
-                const rect = header.getBoundingClientRect();
+                const rect = header[0].getBoundingClientRect();
                 return (
                     rect.bottom > 0 &&
                     rect.top < (window.innerHeight || document.documentElement.clientHeight)
                 );
             }
 
-            document.addEventListener('scroll', function() {
-                if (!isHeaderInViewport() && !video.muted) {
+            $(window).on('scroll', function() {
+                if (!isHeaderInViewport() && !video.prop('muted')) {
                     setAudio(false);
                 }
             });
