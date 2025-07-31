@@ -143,6 +143,10 @@ body{
         margin: 60px auto;
         max-width: 600px;
     }
+    .box-youtube{
+        margin: 30px auto;
+        max-width: 900px;
+    }
 
 
 
@@ -164,6 +168,9 @@ body{
     }
     .header h1{
         width: 90%;
+    }
+    .box-youtube iframe{
+        height: 350px;
     }
 
 }
