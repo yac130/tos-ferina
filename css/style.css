@@ -169,6 +169,12 @@ body{
     .header h1{
         width: 90%;
     }
+    .header{
+        height: 40vh;
+    }
+    .header iframe{
+
+    }
     .box-youtube iframe{
         height: 350px;
     }
